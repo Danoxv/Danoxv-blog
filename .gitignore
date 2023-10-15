@@ -1,23 +1,41 @@
-/vendor/
-node_modules/
+# Editor directories and files
+/.vscode/*
+!/.vscode/extensions.json
+/.idea
+
+/vendor
+/node_modules
+
+/bootstrap/ssr
+/public/build
+/public/hot
+/public/storage
+/public/mix-manifest.json
+
+/storage/*.key
+
+.env
+.env.backup
+
+.phpunit.result.cache
+.phpstorm.meta.php
+_ide_helper.php
+
+docker-compose.override.yml
+
+Homestead.json
+Homestead.yaml
+
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+.DS_Store
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
+# RoadRunner files
+rr
+.rr.yaml
 
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
-.env
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
+# GitLab Code Quality Report
+cs.json
+cq.json
+gl-code-quality-report.json
