@@ -1,0 +1,44 @@
+@import 'bootstrap/scss/variables';
+
+// Часть про Маркдаун
+.markdown {
+	h1, h2, h3, h4, h5, h6 {
+		.heading-permalink {
+			position: absolute;
+			margin-left: -1.5rem;
+			width: 1.5rem;
+			padding-right: 0.5rem;
+			text-decoration: none;
+			text-align: right;
+			opacity: 0.1;
+		}
+
+		&:hover {
+			.heading-permalink {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	blockquote {
+		border-left: 2px solid var(--bs-border-color);
+		padding-left: 1rem;
+	}
+
+	.scroll-parent-highlight {
+		padding: 0 $mark-padding;
+		background-color: var(--bs-highlight-bg);
+	}
+}
+
+.table {
+	th[align=left] {
+		text-align: left;
+	}
+	th[align=center] {
+		text-align: center;
+	}
+	th[align=right] {
+		text-align: right;
+	}
+}
