@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 createInertiaApp({
   //id: 'app',
   title: (title) => `${title} ${appName}`,
-  resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({})),
+  resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Auth/Login.vue": () => import("./assets/Login-8886365a.mjs"), "./Pages/Site/Index.vue": () => import("./assets/Index-375fcb3d.mjs") })),
   setup({ el, App, props, plugin }) {
     const vueApp = createApp({ render: () => h(App, props) });
     vueApp.use(CKEditor);

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\WishController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'indexPage'])->name('indexPage');
+
+Route::get('/projects', [ProjectController::class, 'getProjects'])->name('getProjects');
+Route::get('/projects{id}', [ProjectController::class, 'getProjectById'])->name('getProjectById');
+
+Route::get('/wishlist', [WishController::class, 'getWishlist'])->name('getWishlist');
+
+

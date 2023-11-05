@@ -26,7 +26,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN groupadd -g 1000 www  &&  useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy application files
-COPY --chown=www:www . /var/www
+COPY --link --chown=www:www . /var/www
 RUN chown www:www -R /var/www/storage
 
 # Change current user to www

@@ -16,7 +16,6 @@ const appName = APP_NAME || document.getElementsByTagName('title')[0]?.innerText
 document.addEventListener('DOMContentLoaded', () => {
 	run(document);
 });
-
 createInertiaApp({
 	//id: 'app',
 	title: (title) => `${title} ${appName}`,
