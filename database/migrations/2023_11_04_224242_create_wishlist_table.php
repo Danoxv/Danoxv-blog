@@ -16,7 +16,7 @@ return new class extends Migration {
 			$table->string('description');
 			$table->string('link_product');
 			$table->integer('price_product');
-			$table->enum('status',['start','done']);
+			$table->enum('status', ['start', 'done']);
 			$table->timestamps();
 		});
 	}

@@ -10,6 +10,6 @@ class IndexController extends Controller
 {
 	public function indexPage(): Response
 	{
-		return Inertia::render('Site/Index',[]);
+		return Inertia::render('Site/Index', []);
 	}
 }
