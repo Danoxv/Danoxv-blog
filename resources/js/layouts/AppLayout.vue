@@ -55,7 +55,7 @@ export default {
 </script>
 
 <template>
-	<div class="AppLayout">
+	<div class="AppLayout" style="font-size: 1.5rem;">
 		<header>
 			<link href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css"
 			      rel="stylesheet">
@@ -65,7 +65,7 @@ export default {
 
 		<nav class="navbar navbar-light bg-dark p-1">
 			<div class="container-fluid col-10">
-				<a class="navbar-brand text-light"><p style="font-size: 33px">Danoxv</p></a>
+				<a class="navbar-brand text-light" href="/"><p style="font-size: 33px">Danoxv</p></a>
 				<a class="navbar-brand text-light text-center col-md-4" href="tel:+79524218870"><small>+7 952
 					421‒**‒**</small></a>
 				<div class="navbar navbar-right">
@@ -112,16 +112,16 @@ export default {
 								Useful links
 							</h6>
 							<p>
-								<a class="text-reset">Project</a>
+								<a class="text-reset" :href="route('projects.index')">Project</a>
 							</p>
 							<p>
-								<a class="text-reset">Wishlist</a>
+								<a class="text-reset" :href="route('wishlist.getWishlist')">Wishlist</a>
 							</p>
 							<p>
 								<a class="text-reset">Works</a>
 							</p>
 							<p>
-								<a class="text-reset">Help</a>
+								<a class="text-reset" href="https://t.me/Danoxv">Help</a>
 							</p>
 						</div>
 

@@ -16,6 +16,7 @@ return new class extends Migration {
 			$table->string('description');
 			$table->string('link_product');
 			$table->integer('price_product');
+			$table->foreignId('category_wishlist_id');
 			$table->enum('status', ['start', 'done']);
 			$table->timestamps();
 		});

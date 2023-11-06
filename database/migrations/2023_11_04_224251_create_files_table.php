@@ -16,6 +16,7 @@ return new class extends Migration {
 			$table->string('url');
 			$table->foreignId('project_id');
 			$table->integer('number');
+			$table->boolean('is_main');
 			$table->timestamps();
 		});
 	}

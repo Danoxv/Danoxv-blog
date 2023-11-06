@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'indexPage'])->name('indexPage');
 
-Route::get('/projects', [ProjectController::class, 'getProjects'])->name('getProjects');
-Route::get('/projects{id}', [ProjectController::class, 'getProjectById'])->name('getProjectById');
+Route::get('/projects', [ProjectController::class, 'getProjects'])->name('projects.index');
+Route::get('/projects{id}', [ProjectController::class, 'getProjectById'])->name('projects.getProjectById');
 
-Route::get('/wishlist', [WishController::class, 'getWishlist'])->name('getWishlist');
-
-
+Route::get('/wishlist', [WishController::class, 'getWishlist'])->name('wishlist.getWishlist');

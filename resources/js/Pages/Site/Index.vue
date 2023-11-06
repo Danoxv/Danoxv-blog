@@ -29,47 +29,16 @@
 		<div class="p-md-5">
 			<p class="h3 text-center fw-bold">Проекты</p>
 			<div class="row row-cols-1 row-cols-md-2 g-4">
-				<div class="col">
-					<div class="card">
-						<img src="sijeko716.png" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Заголовок карточки</h5>
-							<p class="card-text">Это более длинная карта С вспомогательным текстом
-								ниже в качестве естественного перехода к дополнительному контенту.
-								Этот контент немного длиннее.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="sijeko716.png" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Заголовок карточки</h5>
-							<p class="card-text">Это более длинная карта С вспомогательным текстом
-								ниже в качестве естественного перехода к дополнительному контенту.
-								Этот контент немного длиннее.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="sijeko716.png" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Заголовок карточки</h5>
-							<p class="card-text">Это более длинная карта С вспомогательным текстом
-								ниже в качестве естественного перехода к дополнительному
-								контенту.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="sijeko716.png" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Заголовок карточки</h5>
-							<p class="card-text">Это более длинная карта С вспомогательным текстом
-								ниже в качестве естественного перехода к дополнительному контенту.
-								Этот контент немного длиннее.</p>
+
+				<div v-for="project in projects">
+					<div class="col">
+						<div class="card">
+							<img src="sijeko716.png" class="card-img-top"
+							     alt="...">
+							<div class="card-body">
+								<h4 class="card-title">{{project.name}}</h4>
+								<p class="card-text">{{project.description}}</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,10 +48,11 @@
 
 		<div class="p-md-5">
 			<p class="h3 text-center fw-bold">Вишлист</p>
-			<ul class="list-group list-group-horizontal">
-				<li class="list-group-item text-center flex-fill">Элемент</li>
-				<li class="list-group-item text-center flex-fill">Второй элемент</li>
-				<li class="list-group-item text-center flex-fill">Третий элемент</li>
+			<ul class="list-group list-group-horizontal t">
+				<template v-for="wish in wishlists">
+					<li class="list-group-item text-center flex-fill"><a class="link-dark"
+					:href="wish.link_product">{{wish.name}}</a></li>
+				</template>
 			</ul>
 		</div>
 
@@ -128,7 +98,17 @@ import AppLayout from "@/layouts/AppLayout.vue";
 
 export default {
 	name: "Index",
-	components: {AppLayout}
+	components: {AppLayout},
+	props: {
+		wishlists: {type: Object, required: true},
+		projects: {type: Object, required: true}
+	},
+	data() {
+		return {
+			wishlists: this.wishlists,
+			projects: this.projects
+		}
+	},
 }
 </script>
 
