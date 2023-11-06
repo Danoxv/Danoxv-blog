@@ -4,14 +4,13 @@
 			<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-bs-interval="15000">
-						<img src="sijeko571.png" class="d-block w-100"
+						<img src="sijeko571.png" data-bs-target class=" fotorama__fullscreen-icon d-block w-100"
 						     alt="...">
 					</div>
 					<div class="carousel-item" data-bs-interval="2000">
 						<img src="sijeko571.png" class="d-block w-100"
 						     alt="...">
 					</div>
-
 				</div>
 				<button class="carousel-control-prev bg-dark-subtle" type="button"
 				        data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -26,18 +25,18 @@
 			</div>
 		</div>
 
-		<div class="p-md-5">
-			<p class="h3 text-center fw-bold">Проекты</p>
+		<div class="mt-5">
+			<p class="h3 text-center fw-bold p-md-5">Проекты</p>
 			<div class="row row-cols-1 row-cols-md-2 g-4">
 
-				<div v-for="project in projects">
+				<div v-for="project in proj">
 					<div class="col">
 						<div class="card">
 							<img src="sijeko716.png" class="card-img-top"
 							     alt="...">
-							<div class="card-body">
-								<h4 class="card-title">{{project.name}}</h4>
-								<p class="card-text">{{project.description}}</p>
+							<div class="card-body bg-dark-subtle text-dark rounded-bottom-5 pt-0 h-10">
+								<h4 class="card-title text-center">{{project.name}}</h4>
+								<p class="card-text text-center">{{project.description}}</p>
 							</div>
 						</div>
 					</div>
@@ -45,19 +44,18 @@
 			</div>
 		</div>
 
-
-		<div class="p-md-5">
-			<p class="h3 text-center fw-bold">Вишлист</p>
+		<div class="mt-5">
+			<p class="h3 text-center fw-bold p-md-5">Вишлист</p>
 			<ul class="list-group list-group-horizontal t">
-				<template v-for="wish in wishlists">
-					<li class="list-group-item text-center flex-fill"><a class="link-dark"
-					:href="wish.link_product">{{wish.name}}</a></li>
+				<template v-for="wishl in wish">
+					<li class="list-group-item text-center flex-fill">
+						<a class="link-primary" :href="wishl.link_product">{{wishl.name}}</a></li>
 				</template>
 			</ul>
 		</div>
 
-		<div class="p-md-5">
-			<p class="h3 text-center fw-bold">Что почитать/послушать?</p>
+		<div class="mt-5">
+			<p class="h3 text-center fw-bold p-md-5">Что почитать/послушать?</p>
 
 			<table class="table text-left">
 				<thead class="table-dark">
@@ -105,8 +103,8 @@ export default {
 	},
 	data() {
 		return {
-			wishlists: this.wishlists,
-			projects: this.projects
+			wish: this.wishlists,
+			proj: this.projects
 		}
 	},
 }
@@ -114,4 +112,27 @@ export default {
 
 <style scoped>
 
+.carousel-control-prev,
+.carousel-control-next {
+	width: 25px;
+	height: 25px;
+	opacity: 0;
+	border-radius:20px;
+	transition: opacity 0.2s ease-in-out;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+	opacity: 1;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
 </style>

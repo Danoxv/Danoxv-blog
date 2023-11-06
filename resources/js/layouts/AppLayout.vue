@@ -1,18 +1,18 @@
 <script>
 import RouteLink from "../../basket/RouteLink.vue";
-// import {
-// 	// enable as enableDarkMode,
-// 	// disable as disableDarkMode,
-// 	// setFetchMethod
-// } from 'darkreader';
-//
-// setFetchMethod(window.fetch);
-//
-// enableDarkMode({
-// 	brightness: 100,
-// 	contrast: 90,
-// 	sepia: 10,
-// });
+import {
+	enable as enableDarkMode,
+	disable as disableDarkMode,
+	setFetchMethod
+} from 'darkreader';
+
+setFetchMethod(window.fetch);
+
+enableDarkMode({
+	brightness: 100,
+	contrast: 90,
+	sepia: 10,
+});
 
 export default {
 	name: "AppLayout",
@@ -22,35 +22,35 @@ export default {
 			year: new Date().getFullYear()
 		};
 	},
-	// methods: {
-	// 	toggleDarkMode() {
-	// 		let isEnabled = this.getDarkMoodState();
-	// 		isEnabled = !isEnabled;
-	// 		this.setDarkMode(isEnabled);
-	// 	},
-	// 	setDarkMode(isEnabled) {
-	// 		if (isEnabled) {
-	// 			enableDarkMode({
-	// 				brightness: 100,
-	// 				contrast: 90,
-	// 				sepia: 10,
-	// 			});
-	// 		} else {
-	// 			disableDarkMode();
-	// 		}
-	// 		this.setDarkMoodState(isEnabled);
-	// 	},
-	// 	getDarkMoodState() {
-	// 		return (localStorage.getItem('darkModeEnabled') === 'true');
-	// 	},
-	// 	setDarkMoodState(isEnabled) {
-	// 		localStorage.setItem('darkModeEnabled', isEnabled ? 'true' : 'false')
-	// 	}
-	// },
-	// created() {
-	// 	const isEnabled = this.getDarkMoodState() || window.matchMedia('(prefers-color-scheme: dark)').matches;
-	// 	this.setDarkMode(isEnabled);
-	// },
+	methods: {
+		toggleDarkMode() {
+			let isEnabled = this.getDarkMoodState();
+			isEnabled = !isEnabled;
+			this.setDarkMode(isEnabled);
+		},
+		setDarkMode(isEnabled) {
+			if (isEnabled) {
+				enableDarkMode({
+					brightness: 140,
+					contrast: 90,
+					sepia: 10,
+				});
+			} else {
+				disableDarkMode();
+			}
+			this.setDarkMoodState(isEnabled);
+		},
+		getDarkMoodState() {
+			return (localStorage.getItem('darkModeEnabled') === 'true');
+		},
+		setDarkMoodState(isEnabled) {
+			localStorage.setItem('darkModeEnabled', isEnabled ? 'true' : 'false')
+		}
+	},
+	created() {
+		const isEnabled = this.getDarkMoodState() || window.matchMedia('(prefers-color-scheme: dark)').matches;
+		this.setDarkMode(isEnabled);
+	},
 }
 </script>
 
@@ -65,10 +65,14 @@ export default {
 
 		<nav class="navbar navbar-light bg-dark p-1">
 			<div class="container-fluid col-10">
-				<a class="navbar-brand text-light" href="/"><p style="font-size: 33px">Danoxv</p></a>
-				<a class="navbar-brand text-light text-center col-md-4" href="tel:+79524218870"><small>+7 952
+				<a class="navbar-brand text-light" href="/"><p style="font-size: 26px">Danoxv</p></a>
+				<a class="navbar-brand text-light text-center col-md-6" href="tel:+79524218870"><small>+7 952
 					421‒**‒**</small></a>
-				<div class="navbar navbar-right">
+				<a class="navbar-text text-light text-decoration-none mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
+				   :href="route('projects.index')">Projects</a>
+				<a class="navbar-text text-light text-decoration-none  mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
+				   :href="route('wishlist.getWishlist')">Wishlist</a>
+				<div class="navbar navbar-right" style="padding-top: 20px;">
 					<button @click="toggleDarkMode" style="margin-left:10px;"
 					        class="btn btn-secondary bi bi-circle-half"
 					        id="darkModeButton"></button>
@@ -116,9 +120,6 @@ export default {
 							</p>
 							<p>
 								<a class="text-reset" :href="route('wishlist.getWishlist')">Wishlist</a>
-							</p>
-							<p>
-								<a class="text-reset">Works</a>
 							</p>
 							<p>
 								<a class="text-reset" href="https://t.me/Danoxv">Help</a>

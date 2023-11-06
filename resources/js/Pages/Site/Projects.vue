@@ -8,7 +8,7 @@
 						<div class="card">
 							<img src="sijeko716.png"
 							     class="card-img-top img-fluid" alt="...">
-							<div class="card-body bg-dark text-light rounded-bottom-5 pt-0 h-10">
+							<div class="card-body bg-dark-subtle text-dark rounded-bottom-5 pt-0 h-10">
 								<h3 class="card-title text-center">{{project.name}}</h3>
 								<p class="card-text text-center h4">{{project.description}}</p>
 							</div>
