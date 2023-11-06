@@ -68,9 +68,9 @@ export default {
 				<a class="navbar-brand text-light" href="/"><p style="font-size: 26px">Danoxv</p></a>
 				<a class="navbar-brand text-light text-center col-md-6" href="tel:+79524218870"><small>+7 952
 					421‒**‒**</small></a>
-				<a class="navbar-text text-light text-decoration-none mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
-				   :href="route('projects.index')">Projects</a>
-				<a class="navbar-text text-light text-decoration-none  mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
+				<a class="h4 navbar-text text-light text-decoration-none mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
+				   :href="route('projects.index') ">Projects</a>
+				<a class="h4 navbar-text text-light text-decoration-none  mx-ln-1 m-1 py-2 px-4 border text-white rounded-5"
 				   :href="route('wishlist.getWishlist')">Wishlist</a>
 				<div class="navbar navbar-right" style="padding-top: 20px;">
 					<button @click="toggleDarkMode" style="margin-left:10px;"
