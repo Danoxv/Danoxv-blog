@@ -8,7 +8,6 @@ import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy/src/js/vue';
 import {APP_NAME} from './config';
 import CKEditor from '@ckeditor/ckeditor5-vue';
-//import { initSentryForVue } from './modules/vue-sentry';
 import '../scss/app.scss';
 
 const document = window.document;

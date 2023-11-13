@@ -4,11 +4,11 @@
 			<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-bs-interval="15000">
-						<img src="sijeko571.png" data-bs-target class=" fotorama__fullscreen-icon d-block w-100"
+						<img src="/banners/banner1.jpg" data-bs-target class="d-block w-100"
 						     alt="...">
 					</div>
 					<div class="carousel-item" data-bs-interval="2000">
-						<img src="sijeko571.png" class="d-block w-100"
+						<img src="/banners/banner2.png" class="d-block w-100"
 						     alt="...">
 					</div>
 				</div>
@@ -32,8 +32,7 @@
 				<div v-for="project in proj">
 					<div class="col">
 						<div class="card">
-							<img src="sijeko716.png" class="card-img-top"
-							     alt="...">
+					<img class="card-img-top img-thumbnail img-fluid" :src="project.filename" alt="Image not found">
 							<div class="card-body bg-dark-subtle text-dark rounded-bottom-5 pt-0 h-10">
 								<h4 class="card-title text-center">{{project.name}}</h4>
 								<p class="card-text text-center">{{project.description}}</p>
